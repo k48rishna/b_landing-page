@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>AAAAAAAA</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="angular-drawer-master/dist/styles/angular-drawer.css">
+      <link rel="stylesheet" href="css/font-awesome/css/font-awesome.min.css">
+      <link href="css/animations.css" rel="stylesheet">
+      <link href="css/my.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <script>
+          document.write('<base href="' + document.location + '" />');
+      </script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <script src="js/angular.js"></script>
+      <script src="angular-drawer-master/dist/angular-drawer.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-controller="mainCtrl" class="ng-cloak">
+  <!-- Fixed navbar -->
+  <!-- Navigation start -->
+  <nav class="navbar nav-txt pad_nav navbar-color1 navbar-fixed-top"  role="navigation">
+      <div class="container-fluid">
+          <div class="navbar-header">
+              <a class="navbar-brand" ng-click="openLeftDrawer();">
+                  <span style=" line-height: 32px; font-size: 20px; color: #a5a5a5; margin-right: 10px;" class="glyphicon glyphicon-menu-hamburger"></span>
+              </a>
+              <a style="margin-left: 5px; height: 100px; width: 40px;" class="navbar-brand"  href="index.html"><input style="height: 46px; width:125px;" type="image" src="images/tinyowl-logo.png"></a>
+          </div>
+          <div>
+              <ul class="nav  navbar-nav navbar-right">
+                  <li><a ng-class="{ 'active-link': 'a' == selectedIndex }"
+                         ng-click="itemClicked('a'); scrollTo('features')" >Features</a></li>
+                  <li><a ng-class="{ 'active-link': 'b' == selectedIndex }"
+                         ng-click="itemClicked('b'); scrollTo('team')" >About Us</a></li>
+                  <li class="header-heading" ><a ng-class="{ 'active-link': 'c' == selectedIndex }"
+                          ng-click="itemClicked('c');" >For Merchants</a></li>
+                  <li><a ng-class="{ 'active-link': 'd' == selectedIndex }"
+                         href="#" ng-click="loginOpen('sm'); itemClicked('d');">Buyers Login</a></li>
+
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <div class="ng-cloak" id="drawer1" drawer>
+  <!--    <div class="pull-right" style="font-size: 14px;font-family: coda-regular; margin: 20px 20px;">
+          <a style="color: #f3f3f3;" href="#">Login</a> </div>-->
+      <div style="font-family: coda-regular; font-size: 0.9em">
+      <div  style="  margin-left:20px; margin-top: 50px;">
+          <button style=" font-size: 1.2em; font-weight: 100; width: 200px; height: 45px; background-color: rgb(31, 186, 214);
+           color: #FFFFFF; border: 1px solid rgb(30, 172, 199);"
+                  type="button" class="btn btn-default btn-lg" id="signUpButton2">LOG IN</button>
+      </div>
+      <div  style="  margin-left:20px; margin-top: 15px; margin-bottom: 15px;">
+      <button style="font-size: 1.2em; width: 200px; height: 45px; background-color: #e02828; color: #FFFFFF;
+      border: 1px solid  rgb(254, 93, 85);" type="button" class="btn btn-default btn-lg" id="signUpButton1">SIGN UP</button>
+      </div>
+      </div>
+      <ul style="padding-left:0px; margin-left: 0px!important;">
+          <li><a href="#home">About Us</a></li>
+
+          <li><a href="#features" >Features</a></li>
+
+          <li><a href="merchant.html">For Merchants</a></li>
+          <li><a href="#home">About Us</a></li>
+
+          <li><a href="#features" >Features</a></li>
+
+          <li ><a style=" border: 1px solid rgb(31, 186, 214);" href="merchant.html">For Merchants</a></li>
+          <li><a href="#home">About Us</a></li>
+
+          <li><a href="#features" >Features</a></li>
+
+          <li><a href="merchant.html">For Merchants</a></li>
+          <li><a href="#home">About Us</a></li>
+
+
+
+          <!--   <li>
+                 <div class="row">
+                 <div  style="background-color:rgb(31, 186, 214); border: 1px solid #f3f3f3; color: #f3f3f3;
+         height: 100px; line-height: 100px; " class="col-sm-6 center-tag z-depth-1"><span style="display: inline-block;
+         vertical-align: middle;line-height: normal;">Buyer Login</span>
+                     </div>
+                 <div style="background-color: rgb(240,27,40); border-right: 1px solid #f3f3f3;border-top: 1px solid #f3f3f3;border-bottom: 1px solid #f3f3f3; color: #f3f3f3;
+         height: 100px; line-height: 100px; " class="col-sm-6 center-tag z-depth-1"><span style="display: inline-block;
+         vertical-align: middle;line-height: normal;">Buyer SignUp</span>
+                 </div>
+             </div></li> -->
+          <li><a href="#contact">Contact</a></li>
+
+      </ul>
+  </div>
+
+
+  <div style=" margin:75px 0px 45px; font-size: 24px; color: #212121;" class="center-tag" ><p>Go Places with empty pocket !!</p></div>
+<!--search bar-->
+  <div class="col-sm-8 search-box1">
+      <div class="input-group">
+
+          <input type="text" ng-model="asyncSelected" placeholder="Locations"
+                 typeahead="address for address in getLocation($viewValue)| limitTo:8" typeahead-loading="loadingLocations"
+                 typeahead-no-results="noResults" class="form-control input47px">
+          <span class="input-group-btn" style="width:0px;"></span>
+          <input type="text" class="form-control input47px" name="x" placeholder="Search Merchant">
+          <span class="input-group-btn" style="width:0px;"></span>
+          <input size="10" type="text" class="form-control input47px" name="x" placeholder="Merchant Type">
+                  <span class="input-group-btn">
+                    <button style="" class="btn btn-default input47pxbutton" type="button">
+                        <span style="font-size: 20px;color: #FFFFFF" class="glyphicon glyphicon-search"></span>
+                    </button>
+                </span>
+      </div>
+  </div>
+  <!--slide-->
+
+  <div style=" clear:both;margin-left:auto; margin-right: auto;
+    width: 30%; height: 100px;">
+ <div style=" display: block!important;">
+
+     <a href="#" class="usp-icon">
+         <i class="usp-icon1"></i>
+         <p class="usp-caption">brandship</p>
+     </a>
+     <a href="#" class="usp-icon">
+         <i class="usp-icon2"></i>
+         <p class="usp-caption">Pay</p>
+     </a>
+     <a href="#" class="usp-icon">
+         <i  class="usp-icon3"></i>
+         <p class="usp-caption">Offers</p>
+     </a>
+ </div>
+</div>
+
+
+  <div style="display: block; position: relative;height:150px;">
+          <div id="app_div">
+              <p style="color: #212121; font-family: Overlock-Regular;">Download our App</p>
+              <a href="http://play.google.com/store/apps" target="_blank"><input type="image" width="148px" height="48px" src="images/google-badge.png"></a>
+          </div>
+    </div>
+
+  <script type="text/ng-template" id="signupModal.html">
+      <div style="background-color: #FFFFFF;margin: 20px;">
+      <div style="margin-bottom: 30px;">
+          <h4>SIGNUP</h4>
+      </div>
+              <div>
+                  <div class="row">
+                      <div class="col-sm-7">
+      <form>
+
+              <div class="form-group">
+                  <input type="email" class="form-control" id="clientName" placeholder="Email">
+              </div>
+              <div class="form-group">
+                  <input type="tel" maxlength="10" class="form-control" id="businessPhone" placeholder="Mobile">
+              </div>
+              <div class="form-group">
+                  <input type="password" class="form-control" id="businessEmail" placeholder="Password">
+              </div>
+              <div class="form-group">
+                  <input type="password" class="form-control" id="businessEmail" placeholder="Confirm Password">
+              </div>
+              <label>
+                  <input type="checkbox" ng-model="oneAtATime">
+                  I here by agreed to term amd coditions
+              </label>
+              <div class="form-group">
+                  <button type="button" class="btn btn-default btn1" id="signUpButton">Submit</button>
+              </div>
+          <div style="margin-bottom: 40px;">Already have a account? &nbsp;&nbsp;&nbsp;<a ng-click="log1()" style="font-size: 12px;">Login</a></div>
+      </form>
+       </div>
+     <div class="col-sm-5">
+         <div class="social-wrap c">
+             <button class="facebook">Login with Facebook</button>
+             <button class="googleplus">Login with Google</button>
+         </div>
+     </div>
+     </div>
+    </div>
+          </div>
+
+  </script>
+
+  <script type="text/ng-template" id="loginModal.html">
+      <div style="background-color: #FFFFFF; margin: 20px;">
+          <div style="margin-bottom: 30px;">
+              <h4>LOGIN</h4>
+          </div>
+          <div>
+              <div class="row">
+                  <div class="col-sm-7">
+                      <form>
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="clientName" placeholder="Email">
+                          </div>
+                          <div class="form-group">
+                              <input type="password" class="form-control" id="businessEmail" placeholder="Password">
+                          </div>
+                          <span>
+                          <input style="display: inline" type="checkbox" ng-model="oneAtATime">
+                          Remember Me
+                          </label>
+                          <a style="display: inline; float: right; font-size: 12px;">forgot password?</a>
+                              </span>
+                          <div class="form-group">
+                              <button type="button" class="btn btn-default btn1" id="signUpButton">Login</button>
+                          </div>
+                          <div style="margin-bottom: 40px;">New to AAAAAAAA &nbsp;&nbsp;&nbsp;<a ng-click="sign1()" style="font-size: 12px;">SIGNUP</a></div>
+                      </form>
+                  </div>
+                  <div class="col-sm-5">
+                      <div class="social-wrap c">
+                          <button class="facebook">Login with Facebook</button>
+                          <button class="googleplus">Login with Google</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </script>
+
+  <div style="position: relative;" class="divider"></div>
+  <div style="margin-top: 50px;" id="features" class=" intro-sec wow animated slideInLeft center-tag do-section-heading" data-wow-duration="1s" data-wow-delay="0.4s">
+      <h2 class="main-header">Features</h2>
+  </div>
+  <!--demo-->
+  <div style="margin-bottom: 40px;!important;" class="intro-sec container col-md-12">
+      <div class="row">
+
+          <div class="col-md-3">
+              <ul class="align-right">
+                  <li class="wow  animated bounceInDown" data-wow-duration="1s" data-wow-delay="0.4s">
+                      <i class="fa fa-heart wow rotateInDownRight animated" data-wow-duration="1s" data-wow-delay="1s"></i>
+                      <h5>SPLENDID PAYMENT EXPERIENCE</h5>
+                      <p>Spend lesser time spending money. Your debts vanish in a flash. Everything at your fingertips.
+                          fa ok fffIt’s a whole new payment ecosystem!</p>
+                  </li>
+
+                  <li class="wow animated bounceInDown" data-wow-duration="1s" data-wow-delay="0.4s">
+                      <i class="fa fa-coffee wow rotateInDownRight animated" data-wow-duration="1s" data-wow-delay="1s"></i>
+                      <h5>A TRUE SHOPPING COMPANION</h5>
+                      <p>Right from finding the nearest store and discovering irresistible deals, to the seamless checkout. It stands with you! Make
+                          the most of your money, and watch your savings climbing high and high.</p>
+                  </li>
+
+              </ul>
+          </div>
+
+          <div class="col-md-6 center-align wow animated fadeInDownBig" data-wow-duration="1s" data-wow-delay="0.4s">
+              <img class="img-responsive" src="images/intro-ipad.png" alt=""> </div>
+          <div class="col-md-3">
+
+              <ul class="align-left">
+
+                  <li class="wow animated bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+                      <i class="fa fa-paper-plane wow rotateInDownLeft animated" data-wow-duration="1s" data-wow-delay="1s"></i>
+                      <h5>TWITTERING BRANDS</h5>
+                      <p> Get more intimate with your favorite brands. They are closer to you like never before. </p>
+                  </li>
+
+
+                  <li class="wow animated bounceInUp" data-wow-duration="1s" data-wow-delay="0.4s">
+                      <i class="fa fa-cubes wow rotateInDownLeft animated" data-wow-duration="1s" data-wow-delay="1s"></i>
+                      <h5>WELL DOCUMENTED</h5>
+                      <p>Nam posuere orci in elled mentum molestie
+                          puruse tvolutpat dui edu ull mcorper</p>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+
+  <div class="divider"></div>
+  <div id="team" class="center-tag do-section-heading wow animated slideInRight"data-wow-duration="1s" data-wow-delay="0.6s">
+      <h2>Our Team</h2>
+  </div>
+  <div  id="team1">
+      <div class=" container col-md-10 col-md-offset-1">
+      <div style="margin-left: 25px;" class="row team_pic wow animated bounceInLeft" data-wow-duration="1s" data-wow-delay="0.4s">
+          <div class="col-md-3">
+              <div style="background:url('images/team/kk.jpg') no-repeat top left;">
+                  <div class="imgOverlay">
+    						<span>
+    							<span>kk</span><br><br>
+    							<span>Co-Founder</span><br>
+    							<span>CEO</span>
+                                <span id="sec">
+                                                 <ul>
+                                                     <a href="#" title="Like us!">
+                                                         <i class="fa fa-facebook fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Tweet us!">
+                                                         <i class="fa fa-twitter fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Connect wih us!">
+                                                         <i class="fa fa-linkedin fa-lg"></i>
+                                                     </a>
+                                                 </ul>
+    						         </span>
+                             </span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-3">
+              <div style= "background:url('images/team/kk.jpg') no-repeat top left;">
+                  <div class="imgOverlay">
+    						<span>
+    							<span>kk</span><br><br>
+    							<span>Co-Founder</span><br>
+    							<span>CEO</span>
+                                <span id="sec">
+                                                 <ul>
+                                                     <a href="#" title="Like us!">
+                                                         <i class="fa fa-facebook fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Tweet us!">
+                                                         <i class="fa fa-twitter fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Connect wih us!">
+                                                         <i class="fa fa-linkedin fa-lg"></i>
+                                                     </a>
+                                                 </ul>
+    						         </span>
+                             </span>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-3">
+              <div style="background:url('images/team/kk.jpg') no-repeat top left;">
+                  <div class="imgOverlay">
+    						<span>
+    							<span>kk</span><br><br>
+    							<span>Co-Founder</span><br>
+    							<span>CEO</span>
+                                <span id="sec">
+                                                 <ul>
+                                                     <a href="#" title="Like us!">
+                                                         <i class="fa fa-facebook fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Tweet us!">
+                                                         <i class="fa fa-twitter fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Connect wih us!">
+                                                         <i class="fa fa-linkedin fa-lg"></i>
+                                                     </a>
+                                                 </ul>
+    						         </span>
+                             </span>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-3">
+              <div style="background:url('images/team/kk.jpg') no-repeat top left;">
+                  <div class="imgOverlay">
+    						<span>
+    							<span>kk</span><br><br>
+    							<span>Co-Founder</span><br>
+    							<span>CEO</span>
+                                <span id="sec">
+                                                 <ul>
+                                                     <a href="#" title="Like us!">
+                                                         <i class="fa fa-facebook fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Tweet us!">
+                                                         <i class="fa fa-twitter fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Connect wih us!">
+                                                         <i class="fa fa-linkedin fa-lg"></i>
+                                                     </a>
+                                                 </ul>
+    						         </span>
+                             </span>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div style="margin-left: 100px;" class="row section team_pic wow animated bounceInRight" data-wow-duration="1.2s" data-wow-delay="0.4s">
+          <div class="col-md-4">
+              <div style="background:url('images/team/kk.jpg') no-repeat top left;">
+                  <div class="imgOverlay">
+    						<span>
+    							<span>kk</span><br><br>
+    							<span>Co-Founder</span><br>
+    							<span>CEO</span>
+                                <span id="sec">
+                                                 <ul>
+                                                     <a href="#" title="Like us!">
+                                                         <i class="fa fa-facebook fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Tweet us!">
+                                                         <i class="fa fa-twitter fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Connect wih us!">
+                                                         <i class="fa fa-linkedin fa-lg"></i>
+                                                     </a>
+                                                 </ul>
+    						         </span>
+                             </span>
+                  </div>
+              </div>
+          </div><div class="col-md-4">
+          <div style="background:url('images/team/kk.jpg') no-repeat top left;">
+              <div class="imgOverlay">
+    						<span>
+    							<span>kk</span><br><br>
+    							<span>Co-Founder</span><br>
+    							<span>CEO</span>
+                                <span id="sec">
+                                                 <ul>
+                                                     <a href="#" title="Like us!">
+                                                         <i class="fa fa-facebook fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Tweet us!">
+                                                         <i class="fa fa-twitter fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Connect wih us!">
+                                                         <i class="fa fa-linkedin fa-lg"></i>
+                                                     </a>
+                                                 </ul>
+    						         </span>
+                             </span>
+              </div>
+          </div>
+      </div>
+          <div class="col-md-4">
+              <div style="background:url('images/team/kk.jpg') no-repeat top left;">
+                  <div class="imgOverlay">
+    						<span>
+    							<span>kk</span><br><br>
+    							<span>Co-Founder</span><br>
+    							<span>CEO</span>
+                                <span id="sec">
+                                                 <ul>
+                                                     <a href="#" title="Like us!">
+                                                         <i class="fa fa-facebook fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Tweet us!">
+                                                         <i class="fa fa-twitter fa-lg"></i>
+                                                     </a>
+                                                     <a href="#" title="Connect wih us!">
+                                                         <i class="fa fa-linkedin fa-lg"></i>
+                                                     </a>
+                                                 </ul>
+    						         </span>
+                             </span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  <div class="divider"></div>
+
+  <div id="contact" style="padding-bottom: 40px;"class="team11">
+  <div class="do-section-heading center-tag">
+      <h2>Contact Us</h2>
+  </div>
+  <div class="container section">
+      <div class="row ">
+          <!---addres -->
+          <div style="margin-top: 28px;"  class="col-sm-6 center-tag">
+
+
+              <div style="border: 1px solid #FFFFFF; border-radius: 5px;">
+              <div class="contact_txt">
+                  <p> AAAAAAAA  Pvt. Ltd,<br>
+                      G-20, Cholenkeril Greenscape-2,<br>
+                      Manipal Count Road,Sigasnadra,<br>
+                      Bangalore - 560068<br><br>
+
+                      Contact No-099 99 999999<br>
+                      Mail us: contact@AAAAAAAA.com
+              </div>
+              </p>
+                  </div>
+          </div>
+          <div style="border-left: 1px solid #FFFFFF; padding-left: 60px;" class=" col-sm-6">
+              <div style=" margin: 0 auto;width:60%;margin-bottom: 10px; font-weight: 500;" class="container col-center">
+                  <h4>Message us we will get in touch</h4>
+              </div>
+              <form  class="contact1">
+                  <div class="form-group">
+                      <input type="text" class="form-control signUpInput" id="clientName" placeholder="Name">
+                  </div>
+                  <div class="form-group">
+                      <input type="tel" maxlength="10" class="form-control signUpInput" id="businessPhone" placeholder="Mobile">
+                  </div>
+                  <div class="form-group">
+                      <input type="email" class="form-control signUpInput" id="businessEmail" placeholder="Email">
+                  </div>
+                  <div class="form-group">
+                      <textarea class="form-control" rows="3" placeholder="Message"></textarea>
+                  </div>
+
+                  <div class="form-group center-tag">
+                      <button type="button" class="btn btn-default" id="signUpButton">Submit</button>
+                  </div>
+              </form>
+
+          </div>
+      </div>
+  </div>
+      </div>
+  </div>
+
+
+<div class="container"></div>
+
+<div style="position: relative;">
+  <button type="button" onclick="$('html,body').animate({scrollTop:0},'slow');return false;" class="btn btn-circle btn-xl">
+      <span class="glyphicon glyphicon-chevron-up "></span>
+  </button>
+    </div>
+<div style="background-color:#f5f5f5; border-top: 1px solid #bdbdbd; ">
+            <div  class="container">
+            <!--social-->
+            <div style="margin-top: 30px;" class="row">
+                <div class=" col-md-4">
+                    <ul class="foot1 ">
+                        <li class="footer_app_heading">Our Policy</li>
+                        <li><a href="http://play.google.com/store/apps" target="_blank">Privacy Policy </a> </li>&nbsp;&nbsp;
+                        <li><a href="http://itunes.apple.com/en/app/apple-store" target="_blank">Terms and Conditions </a> </li>&nbsp;&nbsp;
+                        <li><a href="http://www.microsoft.com/store/apps/" target="_blank">Refund Policy </a> </li>&nbsp;&nbsp;
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="foot1">
+                        <li class="footer_app_heading">Company</li>
+                        <li><a href="http://play.google.com/store/apps" target="_blank">About </a> </li>&nbsp;&nbsp;
+                        <li><a href="http://itunes.apple.com/en/app/apple-store" target="_blank">Team </a> </li>&nbsp;&nbsp;
+                        <li><a href="http://www.microsoft.com/store/apps/" target="_blank">Contact </a> </li>&nbsp;&nbsp;
+                    </ul>
+                </div>
+                <div class="app_badge col-md-4">
+                    <ul class="foot1">
+                        <li class="footer_app_heading"> Download our Apps</li>
+                        <li><a href="http://play.google.com/store/apps" target="_blank"><input class="z-depth-1 hoverable" type="image" src="images/google_badge.png"/> </a> </li>&nbsp;
+                        <li><a href="http://itunes.apple.com/en/app/apple-store" target="_blank"><input class="z-depth-1 hoverable" type="image" src="images/apple_badge.png"/> </a> </li>&nbsp;
+                        <li><a href="http://www.microsoft.com/store/apps/" target="_blank"><input class="z-depth-1 hoverable" type="image" src="images/windows_badge.png"/> </a> </li>&nbsp;
+
+                    </ul>
+                </div>
+
+            </div>
+            <div class="follow_icon">
+                <ul class="list_horizontal center-tag ">
+                    <li><a href="http://facebook.com" target="_blank"><input class="z-depth-1 hoverable" type="image" src="images/facebook.png"/> </a> </li>&nbsp;&nbsp;
+                    <li><a href="http://twitter.com" target="_blank"><input class="z-depth-1 hoverable" type="image" src="images/twitter.png"/> </a> </li>&nbsp;&nbsp;
+                    <li><a href="http://plus.google.com" target="_blank"><input class="z-depth-1 hoverable" type="image" src="images/google+.png"/> </a> </li>&nbsp;&nbsp;
+                    <li><a href="http://linkedin.com" target="_blank"><input  class="z-depth-1 hoverable"type="image" src="images/linkedin.png"/> </a> </li>
+                </ul>
+            </div>
+            </div>
+
+  <div class="panel_footer_color">
+      <div  class=" center-tag">
+          @ 2015 Copyright AAAAAAAA.  All Right Reserved.
+      </div>
+  </div>
+    </div>
+
+
+  <script src="js/angular.js"></script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular-animate.js"></script>
+
+    <script src="js/ui-bootstrap-tpls-0.13.3.min.js"></script>
+
+  <script src="angular-drawer-master/dist/angular-drawer.min.js"></script>
+  <script src="script.js"></script>
+  <script src="js/SmoothScroll.js"></script>
+  <script src="js/wow.min.js"></script>
+  <script>
+      new WOW().init();
+  </script>
+  </body>
+</html>

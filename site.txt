@@ -1,0 +1,123 @@
+
+<li><a ng-class="{ 'active-link': 'e' == selectedIndex }"
+                         ng-click="itemClicked('e'); scrollTo('contact')">Contact</a></li>
+------------------
+ <div class="">
+  <div class="row">
+      <div class="col-md-3 col-md-offset-1">
+          <div style=" margin-left:20%;" class="grid_4 d-block txt-center omega">
+              <h1 class="fs18 f-normal txt-up wlcm-jabong l-hght22">Hello There!</h1>
+              <h3 class="fs14 mb20">Fashion Starts Here</h3>
+              <p class="mb20">Experience global fashion in just a click through our mix of international labels, local brands and designers. Journey through to find your style.</p>
+              <a href="/women/?icn=home-new-UI&amp;ici=r1_b2_women" class="trans-btn">shop women</a><br>
+              <a href="/men/?icn=home-new-UI&amp;ici=r1_b2_men" class="trans-btn">shop men</a>
+          </div>
+      </div>
+      <div style="color: #FFFFFF; margin-left:100px;" class="col-md-6">
+          <div class="row">
+          <div class="">
+                  <div class="module purple double img w">
+                  <h2 class="title">kj</h2>
+                  <p class="sub-heading">Welcome </p>
+              </div>
+              <div class="module red single img youtube">
+                  <p class="title">Brandship</p>
+              </div>
+              </div>
+              <div style="margin-left: 0px;" class="row">
+                  <div>
+                      <div style="width: 251px;" class="module red single img youtube">
+                          <p class="title">Brandship</p>
+                      </div>
+              <div style="width: 252px;" class="module purple double img w">
+                  <h2 class="title">kj</h2>
+                  <p class="sub-heading">Welcome </p>
+              </div>
+
+                  </div>
+                  </div>
+          </div>
+</div>
+</div>
+  </div>
+--------
+//carousel
+<div  style=" margin-left: 15%!important; height: 450px!important; width: 550px!important; margin-top: 20px!important;" id="slides_control ">
+      <div>
+          <carousel interval="myInterval">
+              <slide ng-repeat="slide in slides" active="slide.active">
+                  <img ng-src="{{slide.image}}" style="height: 450px!important; width: 550px!important;  margin: 20px auto;">
+                  <div class="carousel-caption">
+                      <h4>Slide {{$index+1}}</h4>
+                  </div>
+              </slide>
+          </carousel>
+      </div>
+  </div>
+
+------------------
+<div id="features" class="center-tag">
+          <h2>FEATURES</h2>
+      </div>
+      <div id="feature1" class="row section col-md-10 col-md-offset-1">
+          <div class="col-md-4 col-sm-6">
+              <div class="jumbotron"><div>
+                  <span style="display: inline-block;" class="glyphicon glyphicon-bitcoin icon_medium "></span>
+                  <h4 style="display: inline-block;" >SPLENDID PAYMENT EXPERIENCE</h4></div>
+                  <p>Spend lesser time spending money. Your debts vanish in a flash. Everything at your fingertips.
+                      It�s a whole new payment ecosystem!</p>
+              </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+              <div  class="jumbotron"><div>
+                  <span style="display: inline-block;" class="glyphicon glyphicon-bitcoin icon_medium "></span>
+                  <h4 style="display: inline-block;" >A TRUE SHOPPING COMPANION </h4></div>
+                  <p>Right from finding the nearest store and discovering irresistible deals, to the seamless checkout. It stands with you! Make
+                      the most of your money, and watch your savings climbing high and high.</p>
+              </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+              <div  class="jumbotron"><div>
+                  <span style="display: inline-block;" class="glyphicon glyphicon-bitcoin icon_medium "></span>
+                  <h4 style="display: inline-block;" >TWITTERING BRANDS</h4></div>
+                  <p> Get more intimate with your favorite brands. They are closer to you like never before. </p>
+              </div>
+          </div>
+
+          </div>
+------------------
+ <li dropdown>
+      <a href="#" dropdown-toggle>Add <span class="caret"></span></a>
+      <ul class="dropdown-menu" role="menu">
+          <li><a ng-click="openAddUserModal()">User</a></li>
+          <li><a ng-click="openAddDeskModal()">Desk</a></li>
+          <li><a ng-click="openAddPortfolioModal()">Portfolio</a></li>
+          <li class="divider" role="presentation"></li>
+          <li><a ng-click="openAddAdminUserModal()">Admin User</a></li>
+      </ul>
+  </li>
+
+  <div class="btn-group" dropdown is-open="status.isopen">
+      <button id="single-button" type="button" class="btn btn-primary" dropdown-toggle ng-disabled="disabled">
+          Button dropdown <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+          <li role="menuitem"><a href="#">Action</a></li>
+          <li role="menuitem"><a href="#">Another action</a></li>
+          <li role="menuitem"><a href="#">Something else here</a></li>
+          <li class="divider"></li>
+          <li role="menuitem"><a href="#">Separated link</a></li>
+      </ul>
+  </div>
+//dropdown
+
+font-family brandon-grotesque
+-------
+hide  input type= file
+<div class="image-upload">
+                        <label style="border: 1px solid #ddd !important; background-color: #ffffff; border-radius: 4px;" for="file-input">
+                            Add images
+                        </label>
+
+                        <input id="file-input" type="file" class="hidden/>
+                    </div>

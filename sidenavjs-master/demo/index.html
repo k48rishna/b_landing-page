@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>sidenav.js Demo</title>
+    <!-- Sidenav Related Code Bellow -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet" href="../dist/sidenav.css">
+    <!-- Sidenav Related Code Ends Here -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="demo.css">
+  </head>
+  <body>
+    <div id="backdrop"></div>
+    <div id="sidenav">
+      <div class="header">
+        <i class="material-icons avatar">menu</i>
+        <div class="title">Sidenav.js</div>
+        <div class="headline">A JavaScript library to create sidebars in in mobile! No dependencies!</div>
+      </div>
+      <div>
+        <ul>
+          <li>
+            <i class="material-icons">account_circle</i>
+            <span>Some menu item</span>
+          </li>
+          <li class="active">
+            <i class="material-icons">android</i>
+            <span>Another menu item</span>
+          </li>
+          <li>
+            <i class="material-icons">face</i>
+            <span>It doesn't necessarily to be a menu</span>
+          </li>
+          <li>
+            <i class="material-icons">room</i>
+            <span>Put anything you want!</span>
+          </li>
+          <li>
+            <i class="material-icons">airplanemode_active</i>
+            <span>Scrolling is OK too!</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div id="content">
+      <div class="demo-layout mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
+        <header class="demo-header mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
+          <div id="menu-toggle" class="mdl-layout__header-row">
+            <i class="material-icons">menu</i>
+            <span class="mdl-layout-title">Sidenav.js</span>
+          </div>
+        </header>
+        <div class="demo-ribbon"></div>
+            </div>
+    </div>
+    <script src="../dist/sidenav.min.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>

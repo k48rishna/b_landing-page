@@ -1,0 +1,18 @@
+/*origiinal*/
+navbar-brand{
+lineheight: 20px
+    padding: 15px 15px;
+}
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+
+  ng drawer width 250
+  BTNLG  padding: 10px 16px;
+          font-size: 18px;
+          line-height: 1.3333333;
+          border-radius: 6px;
+
+          modal sm width 300px;
